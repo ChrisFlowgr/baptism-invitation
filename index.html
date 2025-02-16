@@ -15,29 +15,30 @@
 
     <!-- RSVP Form -->
     <form id="rsvpForm">
-      <!-- Inline fields for friendly name input -->
-      <div class="inline-fields">
-        <div class="form-group">
-          <label for="firstName">Πες μας το όνομά σου:</label>
-          <input type="text" id="firstName" placeholder="π.χ. Γεώργιος" required />
-        </div>
-        <div class="form-group">
-          <label for="surname">Και το επώνυμό σου:</label>
-          <input type="text" id="surname" placeholder="π.χ. Παπανδρέου" required />
-        </div>
-      </div>
-
+      <!-- Invitation question comes first -->
       <div class="form-group">
         <p>Θα τιμήσεις με την παρουσία σου την τελετή μας; Είμαστε πολύ χαρούμενοι που σκέφτεσαι να έρθεις!</p>
         <label>
-          <input type="radio" name="attending" value="Ναι" required /> Ναι, θα έρθω σίγουρα!
+          <input type="radio" name="attending" value="Ναι" required /> Ναι, θα έρθω
         </label>
         <label>
-          <input type="radio" name="attending" value="Όχι" required /> Όχι, δυστυχώς δεν θα μπορέσω.
+          <input type="radio" name="attending" value="Όχι" required /> Όχι, δυστυχώς όχι
         </label>
       </div>
 
-      <!-- This field appears only if "Ναι" is selected -->
+      <!-- Name and surname fields come after the question -->
+      <div class="inline-fields">
+        <div class="form-group">
+          <label for="firstName">Πες μας το όνομά σου:</label>
+          <input type="text" id="firstName" placeholder="π.χ. Γιώργος" required />
+        </div>
+        <div class="form-group">
+          <label for="surname">Και το επώνυμό σου:</label>
+          <input type="text" id="surname" placeholder="π.χ. Παπαδόπουλος" required />
+        </div>
+      </div>
+
+      <!-- Conditional guest number field -->
       <div class="form-group" id="guestNumberDiv" style="display: none;">
         <label for="numberOfGuests">Πόσοι θα έρθουν μαζί σου;</label>
         <input type="number" id="numberOfGuests" min="0" placeholder="π.χ. 2" />
