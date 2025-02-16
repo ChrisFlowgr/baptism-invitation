@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const data = { firstName, surname, attending, numberOfGuests };
 
     // (Later you will replace this with your actual Google Apps Script URL)
-    const scriptURL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL";
+    const scriptURL = "https://script.google.com/macros/s/AKfycbwT09B_Ba8XPqAVx3tQCmbxbFdldTpQ4u9obXfYISrXQtSU3_BVf4TvM4_KcuAJ1G2j/exec";
 
     // Send the data (don’t worry if this seems technical—the copy-paste does the work)
     fetch(scriptURL, {
