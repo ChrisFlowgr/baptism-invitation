@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const guestNumberDiv = document.getElementById("guestNumberDiv");
   const messageEl = document.getElementById("message");
 
-  // Show or hide the "Αριθμός Συνοδών" field based on the answer
+  // Toggle the guest number field based on the answer
   const attendingRadios = document.getElementsByName("attending");
   attendingRadios.forEach(radio => {
     radio.addEventListener("change", () => {
@@ -17,9 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // When the form is submitted
   rsvpForm.addEventListener("submit", (e) => {
-    e.preventDefault(); // Prevent the page from refreshing
+    e.preventDefault(); // Prevent page refresh
 
-    // Get the data from the form
+    // Gather form data
     const firstName = document.getElementById("firstName").value;
     const surname = document.getElementById("surname").value;
     const attending = document.querySelector('input[name="attending"]:checked').value;
@@ -27,18 +27,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Show a confirmation message based on the answer
     if (attending === "Ναι") {
-      messageEl.textContent = "Σας ευχαριστούμε θερμά για την επιβεβαίωση της παρουσίας σας! Με χαρά θα σας υποδεχτούμε.";
+      messageEl.textContent = "Ευχαριστούμε πολύ που θα έρθεις! Ανυπομονούμε να σε δούμε!";
     } else {
-      messageEl.textContent = "Λυπούμαστε που δεν μπορείτε να παρευρεθείτε. Ελπίζουμε να σας δούμε σε κάποια επόμενη ευκαιρία.";
+      messageEl.textContent = "Λυπούμαστε που δεν μπορείς να έρθεις. Σε ευχαριστούμε για το ενδιαφέρον!";
     }
 
-    // Prepare the data to be sent to your Google Spreadsheet
+    // Prepare the data for sending
     const data = { firstName, surname, attending, numberOfGuests };
 
-    // (Later you will replace this with your actual Google Apps Script URL)
+    // (Replace with your actual Google Apps Script URL when ready)
     const scriptURL = "https://script.google.com/macros/s/AKfycbwT09B_Ba8XPqAVx3tQCmbxbFdldTpQ4u9obXfYISrXQtSU3_BVf4TvM4_KcuAJ1G2j/exec";
 
-    // Send the data
+    // Send the data to your backend
     fetch(scriptURL, {
       method: "POST",
       mode: "no-cors",
