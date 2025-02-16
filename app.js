@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const guestNumberDiv = document.getElementById("guestNumberDiv");
   const messageEl = document.getElementById("message");
 
-  // Toggle the guest number field based on the answer
+  // Toggle the guest number field based on the selected attendance option
   const attendingRadios = document.getElementsByName("attending");
   attendingRadios.forEach(radio => {
     radio.addEventListener("change", () => {
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // When the form is submitted
   rsvpForm.addEventListener("submit", (e) => {
-    e.preventDefault(); // Prevent page refresh
+    e.preventDefault(); // Prevent the page from refreshing
 
     // Gather form data
     const firstName = document.getElementById("firstName").value;
@@ -32,13 +32,13 @@ document.addEventListener("DOMContentLoaded", () => {
       messageEl.textContent = "Λυπούμαστε που δεν μπορείς να έρθεις. Σε ευχαριστούμε για το ενδιαφέρον!";
     }
 
-    // Prepare the data for sending
+    // Prepare the data to be sent to your Google Spreadsheet
     const data = { firstName, surname, attending, numberOfGuests };
 
     // (Replace with your actual Google Apps Script URL when ready)
     const scriptURL = "https://script.google.com/macros/s/AKfycbwT09B_Ba8XPqAVx3tQCmbxbFdldTpQ4u9obXfYISrXQtSU3_BVf4TvM4_KcuAJ1G2j/exec";
 
-    // Send the data to your backend
+    // Send the data
     fetch(scriptURL, {
       method: "POST",
       mode: "no-cors",
