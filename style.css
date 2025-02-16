@@ -11,12 +11,12 @@ body {
 
 /* Container styles for a clean card look */
 .container {
-  background: #ffffff;
+  background: #fff;
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   width: 90%;
-  max-width: 400px;
+  max-width: 500px; /* increased to accommodate inline fields */
 }
 
 /* Banner image styling */
@@ -26,15 +26,15 @@ body {
   margin-bottom: 1.5rem;
 }
 
-/* Inline container for first name and surname */
+/* Inline container for name fields */
 .inline-fields {
   display: flex;
   gap: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .inline-fields .form-group {
   flex: 1;
-  margin-bottom: 1.25rem;
 }
 
 /* Form group spacing for other fields */
@@ -58,12 +58,13 @@ input[type="number"] {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
-  transition: border 0.3s ease;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
 input[type="text"]:focus,
 input[type="number"]:focus {
   border-color: #007BFF;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   outline: none;
 }
 
@@ -100,9 +101,6 @@ button:hover {
 
 /* Responsive adjustments */
 @media (max-width: 480px) {
-  .container {
-    padding: 1.5rem;
-  }
   .inline-fields {
     flex-direction: column;
   }
