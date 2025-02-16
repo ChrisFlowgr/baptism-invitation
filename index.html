@@ -15,35 +15,35 @@
 
     <!-- RSVP Form -->
     <form id="rsvpForm">
-      <!-- Inline fields for Όνομα and Επώνυμο -->
+      <!-- Inline fields for friendly name input -->
       <div class="inline-fields">
         <div class="form-group">
-          <label for="firstName">Όνομα:</label>
-          <input type="text" id="firstName" required />
+          <label for="firstName">Πες μας το όνομά σου:</label>
+          <input type="text" id="firstName" placeholder="π.χ. Γιώργος" required />
         </div>
         <div class="form-group">
-          <label for="surname">Επώνυμο:</label>
-          <input type="text" id="surname" required />
+          <label for="surname">Και το επώνυμό σου:</label>
+          <input type="text" id="surname" placeholder="π.χ. Παπαδόπουλος" required />
         </div>
       </div>
 
       <div class="form-group">
-        <p>Θα παρευρεθείτε στην τελετή μας; Είμαστε πολύ ευγνώμονες για τη συμμετοχή σας!</p>
+        <p>Θα τιμήσεις με την παρουσία σου την τελετή μας; Είμαστε πολύ χαρούμενοι που σκέφτεσαι να έρθεις!</p>
         <label>
-          <input type="radio" name="attending" value="Ναι" required /> Ναι
+          <input type="radio" name="attending" value="Ναι" required /> Ναι, θα έρθω
         </label>
         <label>
-          <input type="radio" name="attending" value="Όχι" required /> Όχι
+          <input type="radio" name="attending" value="Όχι" required /> Όχι, δυστυχώς όχι
         </label>
       </div>
 
       <!-- This field appears only if "Ναι" is selected -->
       <div class="form-group" id="guestNumberDiv" style="display: none;">
-        <label for="numberOfGuests">Αριθμός Συνοδών:</label>
-        <input type="number" id="numberOfGuests" min="0" />
+        <label for="numberOfGuests">Πόσοι θα έρθουν μαζί σου;</label>
+        <input type="number" id="numberOfGuests" min="0" placeholder="π.χ. 2" />
       </div>
 
-      <button type="submit">Αποστολή</button>
+      <button type="submit">Υποβολή</button>
     </form>
 
     <!-- Message after submission -->
