@@ -26,7 +26,18 @@ body {
   margin-bottom: 1.5rem;
 }
 
-/* Form group spacing */
+/* Inline container for first name and surname */
+.inline-fields {
+  display: flex;
+  gap: 1rem;
+}
+
+.inline-fields .form-group {
+  flex: 1;
+  margin-bottom: 1.25rem;
+}
+
+/* Form group spacing for other fields */
 .form-group {
   margin-bottom: 1.25rem;
 }
@@ -92,5 +103,7 @@ button:hover {
   .container {
     padding: 1.5rem;
   }
+  .inline-fields {
+    flex-direction: column;
+  }
 }
-
